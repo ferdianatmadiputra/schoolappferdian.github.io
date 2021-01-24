@@ -1,0 +1,15 @@
+<%- include('./partials/nav.ejs') %>
+
+    <p>this is school profile page. 
+        <br>we have prestigious teachers, undistracted students, and hyper-complex subjects.
+    </p><p>Check links below to see our data:
+    <ul>
+        <% for (let i = 0; i < dir.length; i++){%>
+            <li><a href="<%= link[i]%>" class="link-dark">
+                    <%= dir[i] %>
+                </a>
+            </li>
+        <%} %>
+    </ul>
+    </p>
+<%- include('./partials/footer.ejs') %>

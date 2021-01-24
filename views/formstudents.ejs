@@ -1,0 +1,70 @@
+<%- include('./partials/nav.ejs') %>
+  <br>
+  <h2><%=pageName%></h2>
+  <a href="/students" class="btn btn-outline-dark btn-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+    </svg>
+    show all students data
+  </a>
+  <p>
+      <br>
+      <%=pageParagraph%>
+  </p>
+
+  <div>
+      <form action="<%=action%>" method="post">
+
+          <div class="mb-3 form-floating">
+            <input type="text" class="col-sm-6 form-control" placeholder="Budi" id="firstName" name="firstName" value="<%= student.first_name %>">
+            <label for="firstName" class="col-form-label">First Name</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="text" class="col-sm-6 form-control" placeholder="Sabar" id="lastName" name="lastName" value="<%= student.last_name %>">
+            <label for="lastName" class="col-form-label">Last Name</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input type="text" class="col-sm-6 form-control" id="email" placeholder="bubar@gmail.com" name="email" value="<%=student.email%>">
+            <label for="email" class="col-form-label">Email</label>
+          </div>
+          
+          <fieldset class="mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+            <div class="btn-group col-sm-4" role="group" aria-label="Basic radio toggle button group">
+
+              <input type="radio" class="btn-check" name ="gender" value="male" id="male" 
+              <% if (student.gender === "male"){%>
+                checked
+              <%}%>
+              >
+              <label for="male" class="btn btn-outline-dark">Male</label>
+
+              <input type="radio" class="btn-check" name ="gender" value="female" id="female"
+              <% if (student.gender === "female"){%>
+                checked
+              <%}%>
+              >
+              <label for="female" class="btn btn-outline-dark">Female</label>
+
+            </div>
+          </fieldset>
+
+          <div class="mb-3">
+            <label for="birthDate" class="col-sm-2 col-form-label">Birth Date</label>
+            <input type="date" id="birthDate" class="col-sm-3" name="birthDate" value="<%=student.birth_date%>">
+          </div>
+          <div class="mb-3">
+            <br>
+            <input type="submit" id="submit" class="btn btn-outline-dark btn-lg" value="<%=buttonName%>">
+          </div>
+      </form>
+      <% if (errorValidation) { %>
+        <div class="alert alert-danger mb-3" role="alert">
+          <%=errorValidation%>
+        </div>
+      <%}%>
+  </div>
+
+<%- include('./partials/footer.ejs') %>

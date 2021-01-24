@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "first_name": "Joko",
+    "last_name": "Santoso",
+    "email": "jokosantoso@sekolah.id",
+    "gender": "male",
+    "birth_date": "2005-06-28"
+  },
+  {
+    "id": 2,
+    "first_name": "Lukman",
+    "last_name": "Riki",
+    "email": "lukmanriki@sekolah.id",
+    "gender": "male",
+    "birth_date": "2004-04-13"
+  },
+  {
+    "id": 3,
+    "first_name": "Siti",
+    "last_name": "Nurhayati",
+    "email": "sitinurhayati@sekolah.id",
+    "gender": "female",
+    "birth_date": "2005-05-12"
+  },
+  {
+    "id": 4,
+    "first_name": "Rika",
+    "last_name": "Risti",
+    "email": "rikaristi@sekolah.id",
+    "gender": "female",
+    "birth_date": "2005-01-03"
+  }
+]
